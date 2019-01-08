@@ -5,7 +5,13 @@ from textblob import TextBlob
 class Review(object):
     def __init(self):
 
+
+    REPLACE_NO_SPACE = re.compile("(\;)|(\:)|(\!)|(\')|(\?)|(\,)|(\")|(\()|(\))|(\[)|(\])")
+    REPLACE_WITH_SPACE = re.compile("(<br\s*/><br\s*/>)|(\-)|(\/)")
+    
     def clean_review(self,review):
+         reviews = [REPLACE_NO_SPACE.sub("", line.lower()) for line in reviews]
+         reviews = [REPLACE_WITH_SPACE.sub(" ", line) for line in reviews]
 
     def get_sentiment(self,)
          """
