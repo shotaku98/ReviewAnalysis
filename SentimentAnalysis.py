@@ -14,7 +14,7 @@ class Review(object):
         REPLACE_WITH_SPACE = re.compile("(<br\s*/><br\s*/>)|(\-)|(\/)")
         reviews = [REPLACE_NO_SPACE.sub("", line.lower()) for line in reviews]
         reviews = [REPLACE_WITH_SPACE.sub(" ", line) for line in reviews]
-        reviews.split(".")
+        """reviews.split(".")"""
 
     def get_sentiment(self,reviews):
          
@@ -27,17 +27,8 @@ class Review(object):
             return 'neutral'
         else: 
             return 'negative'
-<<<<<<< HEAD
         
 
-=======
-        """
-"""
-this comment is added by PS
-Sabki gaand me danda de denge
-ML ki gaand faad denge
-"""
->>>>>>> 32cd3891f44ba7b28a5e3f895e78f95ed512d40f
 def main():
     api=Review()
     print(api.get_sentiment("Good food"))
