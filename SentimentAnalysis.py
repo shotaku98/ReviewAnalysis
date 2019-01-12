@@ -1,14 +1,8 @@
-import re
-from textblob import TextBlob
-import tweepy
 
-class Review(object):
+
+"""class Review(object):
     def __init(self):
         print("Object Created")
-
-
-    
-    
     def clean_review(self,reviews):
         REPLACE_NO_SPACE = re.compile("(\;)|(\:)|(\!)|(\')|(\?)|(\,)|(\")|(\()|(\))|(\[)|(\])")
         REPLACE_WITH_SPACE = re.compile("(<br\s*/><br\s*/>)|(\-)|(\/)")
@@ -32,4 +26,21 @@ class Review(object):
 def main():
     api=Review()
     print(api.get_sentiment("Good food"))
+    print("sexxy")
     
+print("running")
+"""
+def clean_Text(text):
+	s_charachter=[";",",","!","\"","'","(",")","-"]
+	clean_text=""
+	for charachter in text:
+		if charachter in s_charachter:
+			clean_text = clean_text + " "
+		else:
+			clean_text = clean_text + charachter
+	return clean_text
+
+def divide_sentences(text):
+        return text.split(".")
+
+print (divide_sentences(clean_Text("poop nation is a thing. It is cool. Partha sucks.")))
