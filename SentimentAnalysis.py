@@ -1,6 +1,9 @@
+import re
+import numpy
+import textblob as TextBlob
+import pandas
 
-
-"""class Review(object):
+class Review(object):
     def __init(self):
         print("Object Created")
     def clean_review(self,reviews):
@@ -29,7 +32,7 @@ def main():
     print("sexxy")
     
 print("running")
-"""
+
 def clean_Text(text):
 	s_charachter=[";",",","!","\"","'","(",")","-"]
 	clean_text=""
@@ -43,4 +46,6 @@ def clean_Text(text):
 def divide_sentences(text):
         return text.split(".")
 
-print (divide_sentences(clean_Text("poop nation is a thing. It is cool. Partha sucks.")))
+
+
+print (divide_sentences(clean_Text("poop nation:is a thing. It is,cool. Partha sucks!")))
